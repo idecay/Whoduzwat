@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dea6c96b-3aa8-46ff-a6b6-42595da523b0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/CreateChore.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CreateChore.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whoduzwat/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/whoduzwat/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/CreateMember.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CreateMember.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Home.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
