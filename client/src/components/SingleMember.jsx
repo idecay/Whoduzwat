@@ -9,7 +9,8 @@ export default class SingleMember extends Component {
       profile_image: "",
       is_parent: false,
       chores: []
-    }
+    },
+    addChoreToggle: false
   };
 
   componentDidMount = () => {
@@ -24,6 +25,11 @@ export default class SingleMember extends Component {
       );
   };
 
+  addChoreToggle = () => {
+    const toggle = !this.state.addChoreToggle;
+    this.setState({ addChoreToggle: toggle });
+  };
+
   render() {
     return (
       <div>
@@ -33,13 +39,15 @@ export default class SingleMember extends Component {
         ) : (
           <div>Child</div>
         )}
+        <img src={this.state.familyMember.profile_image} alt="dreamy" />
+        <h2>List of Chores</h2>
         {this.state.familyMember.chores.map(chore => (
           <div className="choresList">
-            <h2>List of Chores</h2>
+            <img src={chore.image_url} alt="some stuff" />
             <h3>{chore.task} </h3>
           </div>
         ))}
-        <button>Add Chore</button>
+        <button onClick={this.addChoreToggle}>Add Chore</button>
       </div>
     );
   }

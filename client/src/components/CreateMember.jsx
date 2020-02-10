@@ -102,7 +102,15 @@ export default class CreateMember extends Component {
     const allFamilyMembers = this.state.familyMembers.map(member => {
       return (
         <Link to={`/familymember/${member.id}`}>
-          <div>{member.full_name}</div>
+          <div className="memberCard">
+            <div>{member.full_name}</div>
+            <img
+              width="300px"
+              height="300px"
+              src={member.profile_image}
+              alt="profile pic"
+            />
+          </div>
         </Link>
       );
     });

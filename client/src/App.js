@@ -8,6 +8,7 @@ import ChoresList from "./components/ChoresList";
 import Home from "./components/Home";
 import SingleMember from "./components/SingleMember";
 import SingleFamily from "./components/SingleFamily";
+import Welcome from "./components/Welcome";
 
 class App extends React.Component {
   render() {
@@ -36,6 +37,7 @@ class App extends React.Component {
                 path="/family/:oneFamilyId"
                 component={SingleFamily}
               />
+              <Route exact path="/welcome" component={Welcome} />
             </div>
           </Switch>
         </Router>
