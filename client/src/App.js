@@ -21,16 +21,22 @@ class App extends React.Component {
           </nav>
 
           <Switch>
-            <Route exact path="/choreslist" component={ChoresList} />
-            <Route exact path="/createmember" component={CreateMember} />
-            <Route exact path="/createchore" component={CreateChore} />
-            <Route exact path="/home" component={Home} />
-            <Route
-              exact
-              path="/familymember/:memberId"
-              component={SingleMember}
-            ></Route>
-            <Route exact path="/family/:oneFamilyId" component={SingleFamily} />
+            <div className="body">
+              <Route exact path="/choreslist" component={ChoresList} />
+              <Route exact path="/createmember" component={CreateMember} />
+              <Route exact path="/createchore" component={CreateChore} />
+              <Route exact path="/home" component={Home} />
+              <Route
+                exact
+                path="/familymember/:memberId"
+                component={SingleMember}
+              ></Route>
+              <Route
+                exact
+                path="/family/:oneFamilyId"
+                component={SingleFamily}
+              />
+            </div>
           </Switch>
         </Router>
       </div>
