@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dea6c96b-3aa8-46ff-a6b6-42595da523b0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/CreateChore.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/CreateChore.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoduzwat/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/whoduzwat/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/client" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1XREHHHbzmvlx3XTrp3IL5BSShw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -22,6 +26,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -49,10 +54,10 @@
       <screen x="69" y="27" width="1531" height="872" />
     </state>
     <state x="620" y="216" width="424" height="492" key="FileChooserDialogImpl/69.27.1531.872@69.27.1531.872" timestamp="1581000599091" />
-    <state x="494" y="287" key="com.intellij.ide.util.TipDialog" timestamp="1581017946995">
+    <state x="494" y="271" key="com.intellij.ide.util.TipDialog" timestamp="1581313279260">
       <screen x="69" y="27" width="1531" height="872" />
     </state>
-    <state x="494" y="287" key="com.intellij.ide.util.TipDialog/69.27.1531.872@69.27.1531.872" timestamp="1581017946995" />
+    <state x="494" y="271" key="com.intellij.ide.util.TipDialog/69.27.1531.872@69.27.1531.872" timestamp="1581313279260" />
     <state x="879" y="206" width="672" height="678" key="search.everywhere.popup" timestamp="1581018511270">
       <screen x="69" y="27" width="1531" height="872" />
     </state>

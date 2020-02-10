@@ -31,7 +31,7 @@ class Chore(models.Model):
         blank=True,
         null=True,
         related_name="chores")
-    family = models.ForeignKey(Family, on_delete=models.CASCADE, related_name="chores")
+    family = models.ForeignKey(Family, models.SET_NULL, blank=True, null=True, related_name="chores")
 
     def __str__(self):
         return self.task

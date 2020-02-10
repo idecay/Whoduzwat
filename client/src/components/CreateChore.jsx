@@ -1,14 +1,19 @@
 import React, { Component } from "react";
 import axios from "axios";
+import ChoreList from "./ChoresList";
+import { Redirect } from "react-router-dom";
 
 export default class CreateChore extends Component {
   state = {
     chores: [],
     families: [],
+    redirect: false,
+
     newChore: {
       task: "",
       value: "",
-      image_url: ""
+      image_url: "",
+      family_name: ""
     }
   };
 
@@ -22,9 +27,12 @@ export default class CreateChore extends Component {
   };
 
   updateChores = () => {
-    axios.get("/api/v1/chore/").then(res => {
-      this.setState({ chores: res.data });
-    });
+    axios
+      .get("/api/v1/chore/")
+      .then(res => {
+        this.setState({ chores: res.data });
+      })
+      .then(this.setState({ redirect: true }));
   };
 
   onChange = event => {
@@ -45,7 +53,8 @@ export default class CreateChore extends Component {
         newState.newChore = {
           task: "",
           value: "",
-          image_url: ""
+          image_url: "",
+          family_name: ""
         };
         this.setState(newState);
       })
@@ -58,9 +67,12 @@ export default class CreateChore extends Component {
   onCancel = () => {
     this.setState({ cancelRedirect: true });
   };
+
   render() {
     return (
       <div>
+        {this.state.redirect === true ? <Redirect to="/choreslist" /> : null}
+
         <form onSubmit={this.onSubmit}>
           <h1>Create Chore</h1>
           <input
@@ -85,20 +97,20 @@ export default class CreateChore extends Component {
             value={this.state.newChore.image_url}
           />
           <label>Family: </label>
-          <select>
-            <option value="Select a genre">Select a genre</option>
+          <select name="family_name">
+            <option>Select your family</option>
             {this.state.families.map(family => (
-              <option key={family.value} value={family.value}>
-                {family.name}
+              <option
+                key={family.id}
+                value={family.family_name}
+                name="family_name"
+              >
+                {family.family_name}
               </option>
             ))}
           </select>
           <input type="Submit" value="Create" />
         </form>
-
-        {this.state.chores.map(chore => (
-          <h3>{chore.task} </h3>
-        ))}
       </div>
     );
   }
