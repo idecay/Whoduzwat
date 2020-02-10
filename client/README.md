@@ -10,7 +10,7 @@ When a million things are happening at once it helps to have the tools available
 
 ## ERD
 
-![alt text](https://www.lucidchart.com/documents/edit/b771e0d1-8ecd-4c79-8534-d6ad73ab355f# "Whoduzwat ERD")
+![alt text](./client/public/erd.png "Whoduzwat ERD")
 
 ## Wireframes
 
