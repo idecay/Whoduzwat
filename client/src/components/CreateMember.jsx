@@ -13,6 +13,7 @@ export default class CreateMember extends Component {
       profile_image: "",
       chores: []
     },
+    selectedChore: "",
     createMember: false,
     cancel: false,
     choreAdded: false
@@ -31,7 +32,14 @@ export default class CreateMember extends Component {
       })
       .then(() => {
         axios.get("/api/v1/chore/").then(res => {
-          this.setState({ chores: res.data });
+          let choresFromApi = res.data.map(chore => {
+            return { value: chore, display: chore.task };
+          });
+          this.setState({
+            chores: [{ value: "", display: "(Select a Chore to add)" }].concat(
+              choresFromApi
+            )
+          });
         });
       });
   };
@@ -69,7 +77,8 @@ export default class CreateMember extends Component {
         newState.newMember = {
           full_name: "",
           is_parent: Boolean,
-          profile_image: ""
+          profile_image: "",
+          chores: []
         };
         this.setState(newState);
       })
@@ -120,11 +129,13 @@ export default class CreateMember extends Component {
                 onChange={this.onChange}
                 value={this.state.newMember.profile_image}
               />
-
-              <select id="chores" name="chores">
+              <select
+                value={this.state.newMember.chores}
+                onChange={e => this.setState({ selectedChore: e.target.value })}
+              >
                 {this.state.chores.map(chore => (
-                  <option name="chores" value={this.state.newMember.chores}>
-                    {chore.task}{" "}
+                  <option key={chore.value} value={chore.value}>
+                    {chore.display}
                   </option>
                 ))}
               </select>
