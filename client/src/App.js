@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import ChoresList from "./components/ChoresList";
 import Home from "./components/Home";
 import SingleMember from "./components/SingleMember";
+import SingleFamily from "./components/SingleFamily";
 
 class App extends React.Component {
   render() {
@@ -19,7 +20,6 @@ class App extends React.Component {
             <Link to="/createchore"> Create Chore</Link>
           </nav>
 
-          {/* <SingleMember /> */}
           <Switch>
             <Route exact path="/choreslist" component={ChoresList} />
             <Route exact path="/createmember" component={CreateMember} />
@@ -30,6 +30,7 @@ class App extends React.Component {
               path="/familymember/:memberId"
               component={SingleMember}
             ></Route>
+            <Route exact path="/family/:oneFamilyId" component={SingleFamily} />
           </Switch>
         </Router>
       </div>
