@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Families from "./Families";
 
 export default class Home extends Component {
   state = {
@@ -29,18 +30,8 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <h1>Families: </h1>
-        {this.state.family.map(family => (
-          <h3>{family.family_name} </h3>
-        ))}
-        <h1>Family Members: </h1>
-        {this.state.familyMembers.map(member => (
-          <h3>{member.full_name} </h3>
-        ))}
-        <h1>Chores: </h1>
-        {this.state.chores.map(chore => (
-          <h3>{chore.task} </h3>
-        ))}
+        <h1>Choose a family: </h1>
+        <Families />
       </div>
     );
   }
