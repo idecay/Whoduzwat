@@ -3,6 +3,7 @@ import Axios from "axios";
 
 export default class SingleMember extends Component {
   state = {
+    chores: [],
     familyMember: {
       full_name: "",
       profile_image: "",
@@ -12,12 +13,17 @@ export default class SingleMember extends Component {
   };
 
   componentDidMount = () => {
-    Axios.get(`/api/v1/familymember/${this.props.match.params.memberId}/`).then(
-      res => {
+    Axios.get(`/api/v1/familymember/${this.props.match.params.memberId}/`)
+      .then(res => {
         this.setState({ familyMember: res.data });
-      }
-    );
+      })
+      .then(
+        Axios.get("/api/v1/chore/").then(res =>
+          this.setState({ chores: res.data })
+        )
+      );
   };
+
   render() {
     return (
       <div>
@@ -28,9 +34,12 @@ export default class SingleMember extends Component {
           <div>Child</div>
         )}
         {this.state.familyMember.chores.map(chore => (
-          <h3>{chore.task} </h3>
+          <div className="choresList">
+            <h2>List of Chores</h2>
+            <h3>{chore.task} </h3>
+          </div>
         ))}
-        {/* <h3>{this.state.familyMember.chores[0].task}</h3> */}
+        <button>Add Chore</button>
       </div>
     );
   }
