@@ -6,12 +6,16 @@ export default class CreateMember extends Component {
   state = {
     families: [],
     familyMembers: [],
+    chores: [],
     newMember: {
       full_name: "",
       is_parent: Boolean,
-      profile_image: ""
+      profile_image: "",
+      chores: []
     },
-    createMember: false
+    createMember: false,
+    cancel: false,
+    choreAdded: false
   };
 
   componentDidMount = async () => {
@@ -23,6 +27,11 @@ export default class CreateMember extends Component {
       .then(() => {
         axios.get("/api/v1/family/").then(res => {
           this.setState({ families: res.data });
+        });
+      })
+      .then(() => {
+        axios.get("/api/v1/chore/").then(res => {
+          this.setState({ chores: res.data });
         });
       });
   };
@@ -65,18 +74,19 @@ export default class CreateMember extends Component {
         this.setState(newState);
       })
       .then(() => {
-        // this.setState({ redirect: true });
+        this.setState({ createMember: false });
         this.updateFamilyMembers();
       });
-  };
-
-  onCancel = () => {
-    this.setState({ cancelRedirect: true });
   };
 
   toggleCreateMember = () => {
     const toggle = !this.state.createMember;
     this.setState({ createMember: toggle });
+  };
+
+  toggleCancel = () => {
+    const toggle = !this.state.cancel;
+    this.setState({ cancel: toggle, createMember: false });
   };
 
   render() {
@@ -110,6 +120,15 @@ export default class CreateMember extends Component {
                 onChange={this.onChange}
                 value={this.state.newMember.profile_image}
               />
+
+              <select id="chores" name="chores">
+                {this.state.chores.map(chore => (
+                  <option name="chores" value={this.state.newMember.chores}>
+                    {chore.task}{" "}
+                  </option>
+                ))}
+              </select>
+
               <label>Is this person a parent? </label>
               <input
                 type="checkbox"
@@ -117,8 +136,8 @@ export default class CreateMember extends Component {
                 onChange={this.handleInputChange}
                 checked={this.state.newMember.is_parent}
               />
-              {/* TODO: figure out why the submit button wont work with box is checked */}
               <input type="submit" value="Create" />
+              <button onClick={this.toggleCancel}>Cancel</button>
             </form>
           </div>
         ) : (
