@@ -96,7 +96,7 @@ export default class CreateChore extends Component {
             onChange={this.onChange}
             value={this.state.newChore.image_url}
           />
-          <label>Family: </label>
+          {/* <label>Family: </label>
           <select name="family_name">
             <option>Select your family</option>
             {this.state.families.map(family => (
@@ -108,7 +108,7 @@ export default class CreateChore extends Component {
                 {family.family_name}
               </option>
             ))}
-          </select>
+          </select> */}
           <input type="Submit" value="Create" />
         </form>
       </div>
